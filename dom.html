@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <input type="text" id="input-1" placeholder="Number 1">
+    <input type="text" id="input-2" placeholder="Number 2">
+    <button>Multiply Input</button>
+    <button id="addValues">Add Input</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+            let num1 = document.getElementById("input-1").value
+            let num2 = document.getElementById("input-2").value
+            let el = document.createElement("p") 
+            el.innerHTML = "Multiplication of " + num1 + " and " + num2 + " is " + multiply(num1,num2);
+            document.body.appendChild(el);
+        })
+        document.getElementById("addValues").addEventListener("click",function(){
+            let num1 = document.getElementById("input-1").value
+            let num2 = document.getElementById("input-2").value
+            let el = document.createElement("p") 
+            el.innerHTML = "Addition of " + num1 + " and " + num2 + " is " + add(num1,num2);
+            document.body.appendChild(el);
+        })
+        const multiply = function (a,b) {
+            return a*b
+        }
+        const add = function(a,b){
+            return parseInt(a)+parseInt(b)
+        }
+    </script>
+</body>
+
+</html>
