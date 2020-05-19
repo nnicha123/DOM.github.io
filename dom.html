@@ -16,6 +16,9 @@
     <button>Multiply Input</button>
     <button id="addValues">Add Input</button>
     <hr>
+    <input type="text" id="input-text">
+    <button id="input-button">Add text</button>
+    <ul></ul>
     <script>
         // Multiply numbers select button
         document.getElementsByTagName("button")[1].addEventListener("click", function () {
@@ -46,6 +49,13 @@
         const add = function (a, b) {
             return parseInt(a) + parseInt(b)
         }
+        // Add list from input (id = input-text) into the ul tag
+        document.getElementById("input-button").addEventListener("click",function(){
+            let text = document.getElementById("input-text").value
+            let el = document.createElement("li")
+            el.innerHTML = text
+            document.querySelector("ul").appendChild(el)
+        })
     </script>
 </body>
 
