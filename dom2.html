@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM practice 2</title>
+</head>
+
+<body>
+
+    <script>
+        // Add input text * & button
+        document.body.appendChild(document.createElement("input"))
+        document.body.appendChild(document.createElement("button"))
+        // Set up input element & button
+        let inputEl = document.querySelector("input")
+        document.querySelector("button").id = "button-input"
+        document.getElementById("button-input").innerHTML = "Add text"
+        // Append ul element inside body
+        document.body.appendChild(document.createElement("ul"))
+
+        // Add event listener to button -> to listen for when it is clicked & clear afterwards
+        document.getElementById("button-input").addEventListener("click", function () {
+            let text = document.querySelector("input").value
+            let list = document.createElement("li")
+            list.innerHTML = text
+            document.querySelector("ul").appendChild(list)
+            document.querySelector("input").value = ""
+        })
+        // Create button for prompt
+        document.body.appendChild(document.createElement("button")).id = "button-prompt"
+        document.getElementById("button-prompt").innerHTML = "Add from prompt"
+        // Add prompt result to 
+        document.getElementById("button-prompt").addEventListener("click", function () {
+            let text = prompt("Add text")
+            let list = document.createElement("li")
+            list.innerHTML = text
+            document.querySelector("ul").appendChild(list)
+        })
+    </script>
+</body>
+
+</html>
