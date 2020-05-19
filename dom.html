@@ -22,39 +22,44 @@
     <script>
         // Multiply numbers select button
         document.getElementsByTagName("button")[1].addEventListener("click", function () {
-            let num1 = document.getElementById("input-1").value
-            let num2 = document.getElementById("input-2").value
-            let el = document.createElement("p")
+            let num1 = document.getElementById("input-1").value;
+            let num2 = document.getElementById("input-2").value;
+            let el = document.createElement("p");
             el.innerHTML = "Multiplication of " + num1 + " and " + num2 + " is " + multiply(num1, num2);
             document.body.appendChild(el);
+            document.getElementById("input-1").value = "";
+            document.getElementById("input-2").value = "";
         })
         // Add numbers (select by id)
         document.getElementById("addValues").addEventListener("click", function () {
-            let num1 = document.getElementById("input-1").value
-            let num2 = document.getElementById("input-2").value
-            let el = document.createElement("p")
+            let num1 = document.getElementById("input-1").value;
+            let num2 = document.getElementById("input-2").value;
+            let el = document.createElement("p");
             el.innerHTML = "Addition of " + num1 + " and " + num2 + " is " + add(num1, num2);
             document.body.appendChild(el);
+            document.getElementById("input-1").value = "";
+            document.getElementById("input-2").value = "";
         })
         // Add id to first button
-        document.getElementsByTagName("button")[0].id = "changeColor"
+        document.getElementsByTagName("button")[0].id = "changeColor";
         // Select by id & change color of div
         document.getElementById("changeColor").addEventListener("click", function () {
-            document.querySelector("div").style.color = "cyan"
-            document.querySelector("div").style.backgroundColor = "Black"
+            document.querySelector("div").style.color = "cyan";
+            document.querySelector("div").style.backgroundColor = "Black";
         })
         const multiply = function (a, b) {
-            return a * b
+            return a * b;
         }
         const add = function (a, b) {
-            return parseInt(a) + parseInt(b)
+            return parseInt(a) + parseInt(b);
         }
         // Add list from input (id = input-text) into the ul tag
         document.getElementById("input-button").addEventListener("click",function(){
-            let text = document.getElementById("input-text").value
-            let el = document.createElement("li")
-            el.innerHTML = text
-            document.querySelector("ul").appendChild(el)
+            let text = document.getElementById("input-text").value;
+            let el = document.createElement("li");
+            el.innerHTML = text;
+            document.querySelector("ul").appendChild(el);
+            document.getElementById("input-text").value = "";
         })
     </script>
 </body>
